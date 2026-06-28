@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Invite with Media Events</title>
+
+    <style>
+
+        body{
+            font-family:Arial,sans-serif;
+            text-align:center;
+            margin:40px;
+        }
+
+        video{
+            border:2px solid black;
+        }
+
+        #message{
+            color:green;
+            font-weight:bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Community Event Promo Video</h2>
+
+<video
+id="promoVideo"
+width="500"
+controls
+oncanplay="videoReady()">
+
+<source
+src="https://www.w3schools.com/html/mov_bbb.mp4"
+type="video/mp4">
+
+Your browser does not support HTML5 video.
+
+</video>
+
+<p id="message"></p>
+
+<script>
+
+function videoReady(){
+
+    document.getElementById("message").textContent =
+    "Video ready to play.";
+
+}
+
+window.onbeforeunload = function(){
+
+    return "Are you sure you want to leave this page?";
+
+};
+
+</script>
+
+</body>
+</html>

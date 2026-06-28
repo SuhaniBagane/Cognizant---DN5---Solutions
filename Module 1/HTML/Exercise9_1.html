@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation for Event Mapping</title>
+
+    <style>
+
+        body{
+            font-family:Arial, sans-serif;
+            text-align:center;
+            margin-top:50px;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        #result{
+            margin-top:20px;
+            font-weight:bold;
+            color:blue;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Find Nearby Events</h2>
+
+<button onclick="findLocation()">
+    Find Nearby Events
+</button>
+
+<p id="result"></p>
+
+<script>
+
+function findLocation(){
+
+    if(navigator.geolocation){
+
+        navigator.geolocation.getCurrentPosition(
+
+            showPosition,
+
+            showError,
+
+            {
+                enableHighAccuracy:true,
+                timeout:5000,
+                maximumAge:0
+            }
+
+        );
+
+    }
+    else{
+
+        document.getElementById("result").innerHTML =
+        "Geolocation is not supported.";
+
+    }
+
+}
+
+function showPosition(position){
+
+    document.getElementById("result").innerHTML =
+    "Latitude : " + position.coords.latitude +
+    "<br>Longitude : " + position.coords.longitude;
+
+}
+
+function showError(error){
+
+    switch(error.code){
+
+        case error.PERMISSION_DENIED:
+            document.getElementById("result").innerHTML =
+            "Permission Denied.";
+            break;
+
+        case error.POSITION_UNAVAILABLE:
+            document.getElementById("result").innerHTML =
+            "Location Unavailable.";
+            break;
+
+        case error.TIMEOUT:
+            document.getElementById("result").innerHTML =
+            "Request Timed Out.";
+            break;
+
+        default:
+            document.getElementById("result").innerHTML =
+            "Unknown Error.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

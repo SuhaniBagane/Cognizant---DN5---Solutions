@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration Form</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:40px;
+            background-color:#f2f2f2;
+        }
+
+        form{
+            width:400px;
+            padding:20px;
+            border:2px solid black;
+            border-radius:10px;
+            background:white;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        input,
+        select,
+        textarea{
+            width:100%;
+            padding:8px;
+            margin-top:5px;
+            margin-bottom:15px;
+            box-sizing:border-box;
+        }
+
+        input[type="submit"]{
+            width:auto;
+            background-color:blue;
+            color:white;
+            border:none;
+            padding:10px 20px;
+            cursor:pointer;
+        }
+
+        output{
+            color:green;
+            font-weight:bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<h2>Event Registration Form</h2>
+
+<form id="eventForm">
+
+    <label for="name">Name</label>
+    <input
+        type="text"
+        id="name"
+        placeholder="Enter your Name"
+        required
+        autofocus>
+
+    <label for="email">Email</label>
+    <input
+        type="email"
+        id="email"
+        placeholder="Enter your Email"
+        required>
+
+    <label for="date">Event Date</label>
+    <input
+        type="date"
+        id="date"
+        required>
+
+    <label for="event">Event Type</label>
+
+    <select id="event" required>
+        <option value="">Select Event</option>
+        <option>Music Festival</option>
+        <option>Food Carnival</option>
+        <option>Book Fair</option>
+    </select>
+
+    <label for="message">Message</label>
+
+    <textarea
+        id="message"
+        rows="4"
+        placeholder="Enter your Message"></textarea>
+
+    <input type="submit" value="Register">
+
+    <br><br>
+
+    <output id="result"></output>
+
+</form>
+
+<script>
+
+document.getElementById("eventForm").addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    document.getElementById("result").textContent =
+    "Registration Successful!";
+
+});
+
+</script>
+
+</body>
+</html>

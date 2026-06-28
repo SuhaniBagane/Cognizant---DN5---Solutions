@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6 - Event Feedback</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin:40px;
+        }
+
+        input, select, textarea{
+            width:300px;
+            padding:8px;
+            margin:10px 0;
+        }
+
+        button{
+            padding:10px 20px;
+            cursor:pointer;
+        }
+
+        img{
+            width:200px;
+            border:2px solid black;
+            cursor:pointer;
+        }
+
+        #phoneMsg,
+        #fee{
+            color:blue;
+            font-weight:bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Event Feedback Form</h2>
+
+<label for="phone">Phone Number</label><br>
+
+<input
+type="text"
+id="phone"
+placeholder="Enter 10-digit Phone Number"
+onblur="validatePhone()">
+
+<p id="phoneMsg"></p>
+
+<label for="event">Select Event</label><br>
+
+<select
+id="event"
+onchange="showFee()">
+
+<option value="">Select Event</option>
+<option value="100">Music Festival</option>
+<option value="150">Food Carnival</option>
+<option value="200">Book Fair</option>
+
+</select>
+
+<p id="fee"></p>
+
+<button
+type="button"
+onclick="submitFeedback()">
+Submit
+</button>
+
+<br><br>
+
+<img
+id="eventImage"
+src="https://picsum.photos/200/150"
+alt="Community Event"
+ondblclick="enlargeImage()">
+
+<br><br>
+
+<label for="feedback">Feedback</label><br>
+
+<textarea
+id="feedback"
+rows="5"
+placeholder="Type your feedback"
+onkeyup="countCharacters()"></textarea>
+
+<p>Characters Typed: <span id="count">0</span></p>
+
+<script>
+
+function validatePhone(){
+
+    var phone=document.getElementById("phone").value;
+
+    if(phone.length===10){
+
+        document.getElementById("phoneMsg").textContent="Valid Phone Number";
+
+    }
+    else{
+
+        document.getElementById("phoneMsg").textContent="Invalid Phone Number";
+
+    }
+
+}
+
+function showFee(){
+
+    var fee=document.getElementById("event").value;
+
+    if(fee===""){
+
+        document.getElementById("fee").textContent="";
+
+    }
+    else{
+
+        document.getElementById("fee").textContent="Event Fee: ₹"+fee;
+
+    }
+
+}
+
+function submitFeedback(){
+
+    alert("Feedback Submitted Successfully!");
+
+}
+
+function enlargeImage(){
+
+    document.getElementById("eventImage").style.width="400px";
+
+}
+
+function countCharacters(){
+
+    var total=document.getElementById("feedback").value.length;
+
+    document.getElementById("count").textContent=total;
+
+}
+
+</script>
+
+</body>
+</html>
+

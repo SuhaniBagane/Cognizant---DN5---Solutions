@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with Forms</title>
+</head>
+
+<body>
+
+<h2>Event Registration Form</h2>
+
+<form id="registrationForm">
+
+    <label for="name">Name</label><br>
+    <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Enter your name">
+
+    <br><br>
+
+    <label for="email">Email</label><br>
+    <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Enter your email">
+
+    <br><br>
+
+    <label for="event">Select Event</label><br>
+
+    <select
+        id="event"
+        name="event">
+
+        <option value="">Select Event</option>
+        <option value="Music Festival">Music Festival</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Sports Meet">Sports Meet</option>
+
+    </select>
+
+    <br><br>
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+<p id="errorMessage"></p>
+
+<script src="main.js"></script>
+
+</body>
+</html>
+
+  

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging with Chrome DevTools</title>
+
+    <style>
+
+        body{
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        button{
+            padding:10px 20px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        #message{
+            color:blue;
+            font-weight:bold;
+            margin-top:20px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h2>Debugging with Chrome DevTools</h2>
+
+<p id="message">Click the button to test JavaScript.</p>
+
+<button type="button" onclick="showMessage()">
+    Click Me
+</button>
+
+<script>
+
+function showMessage(){
+
+    var eventName = "Community Event";
+
+    console.log("Button Clicked");
+
+    console.log("Event Name : " + eventName);
+
+    document.getElementById("message").innerHTML =
+    "Welcome to " + eventName;
+
+}
+
+</script>
+
+</body>
+</html>

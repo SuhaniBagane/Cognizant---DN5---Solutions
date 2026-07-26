@@ -1,0 +1,52 @@
+TCPServer.java
+
+import java.io.*;
+import java.net.*;
+
+public class TCPServer {
+
+    public static void main(String[] args) throws Exception {
+
+        ServerSocket server =
+                new ServerSocket(5000);
+
+        Socket socket = server.accept();
+
+        PrintWriter out =
+                new PrintWriter(socket.getOutputStream(), true);
+
+        out.println("Hello Client");
+
+        socket.close();
+        server.close();
+
+    }
+}
+
+
+
+
+📄 Client File
+
+TCPClient.java
+import java.io.*;
+import java.net.*;
+
+public class TCPClient {
+
+    public static void main(String[] args) throws Exception {
+
+        Socket socket =
+                new Socket("localhost", 5000);
+
+        BufferedReader in =
+                new BufferedReader(
+                        new InputStreamReader(
+                                socket.getInputStream()));
+
+        System.out.println(in.readLine());
+
+        socket.close();
+
+    }
+}

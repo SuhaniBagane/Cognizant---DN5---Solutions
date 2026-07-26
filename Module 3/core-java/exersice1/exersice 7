@@ -1,0 +1,18 @@
+public class TypeCastingExample {
+
+    public static void main(String[] args) {
+
+        double doubleValue = 99.99;
+        int intValue = (int) doubleValue;
+
+        int number = 50;
+        double convertedDouble = (double) number;
+
+        System.out.println("Original Double : " + doubleValue);
+        System.out.println("Converted to Int: " + intValue);
+
+        System.out.println("Original Int    : " + number);
+        System.out.println("Converted Double: " + convertedDouble);
+
+    }
+}

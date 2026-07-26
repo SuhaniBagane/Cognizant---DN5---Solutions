@@ -1,0 +1,17 @@
+public class DataTypeDemo {
+
+    public static void main(String[] args) {
+
+        int number = 100;
+        float decimal = 12.5f;
+        double pi = 3.14159;
+        char grade = 'A';
+        boolean isJavaFun = true;
+
+        System.out.println("Integer : " + number);
+        System.out.println("Float   : " + decimal);
+        System.out.println("Double  : " + pi);
+        System.out.println("Char    : " + grade);
+        System.out.println("Boolean : " + isJavaFun);
+    }
+}
